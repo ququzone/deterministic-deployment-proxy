@@ -7,18 +7,26 @@
 		"type": "git",
 		"url": "git@github.com:Zoltu/deterministic-deployment-proxy.git"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@types/elliptic": "6.4.9",
-		"@types/node": "12.6.8",
+		"@types/node": "^18.11.18",
+		"@types/yargs": "^17.0.20",
 		"@zoltu/rlp-encoder": "1.0.1",
+		"dotenv": "^16.0.3",
 		"elliptic": "6.5.0",
+		"ethers": "^5.7.2",
 		"js-sha3": "0.8.0",
 		"solc": "0.5.8",
-		"ts-node": "8.3.0",
-		"typescript": "3.5.3"
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.4",
+		"yargs": "^17.6.2"
 	},
 	"scripts": {
-		"build": "ts-node scripts/compile.ts"
+		"compile": "ts-node scripts/compile.ts",
+		"status": "ts-node scripts/status.ts",
+		"submit": "ts-node scripts/submit.ts",
+		"estimate": "ts-node scripts/estimate.ts",
+		"build": "yarn rimraf dist && tsc",
+		"prepublish": "yarn build"
 	}
 }

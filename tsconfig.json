@@ -2,16 +2,17 @@
 	"compilerOptions": {
 		"target": "es2018",
 		"module": "commonjs",
-		"moduleResolution": "node",
-		"noEmit": true,
+		"lib": ["es2020"],
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "./dist",
 		"strict": true,
-		"noImplicitAny": true,
-		"noImplicitThis": true,
-		"noImplicitReturns": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": false,
-		"lib": [ "es2018" ],
-		"typeRoots": [ "./node_modules/@types", "./scripts/typings" ],
-		"rootDir": "scripts",
-	}
+		"rootDirs": ["./src", "./scripts"],
+			"typeRoots": [ "./node_modules/@types", "./scripts/typings" ],
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	},
+	"exclude": ["dist", "node_modules"],
+	"include": ["./scripts", "types.ts"]
 }
